@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ResponsiveDrawer from "./layout/drawer/Drawer";
+import * as React from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { themeOptions } from "./theme/theme";
+import { SnackbarProvider } from "notistack";
+
+const theme = createTheme({
+  ...themeOptions,
+});
 
 function App() {
+  console.log("window", window);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <ThemeProvider theme={theme}>
+        <SnackbarProvider
+          maxSnack={3}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <ResponsiveDrawer />
+        </SnackbarProvider>
+      </ThemeProvider>
     </div>
   );
 }
