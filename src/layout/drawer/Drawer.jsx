@@ -18,6 +18,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import SampleSnackbar from "../../pages/sampleSnackbar/SampleSnackbar";
 import SampleUpload from "../../components/customUpload/Upload";
+import Form from "../../pages/sampleSnackbar/form/Form";
 
 const drawerWidth = 240;
 
@@ -140,8 +141,9 @@ function ResponsiveDrawer(props) {
         <Toolbar />
 
         {/* insert your content here */}
-        <SampleUpload />
-        <SampleSnackbar />
+        {/* <SampleUpload /> */}
+        {/* <SampleSnackbar /> */}
+        <Form />
       </Box>
     </Box>
   );
